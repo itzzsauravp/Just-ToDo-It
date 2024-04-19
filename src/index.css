@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+/* ===================== APP CSS =========================== */
+body {
+  background-color: beige;
+  min-width: 320px;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: space-around;
+  /* gap: 200px; */
+  width: 100%;
+}
+
+
+/* ===================== TodoAddCard CSS ==================== */
+
+.todo-add-card {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 550px;
+  max-height: 280px;
+  padding: 20px;
+  margin: 30px 0px 0px 0px;
+  box-shadow: 5px 5px 5px 2px gray;
+  position: sticky;
+  top: 30px;
+}
+
+h1.title {
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+span.todo-title {
+  color: coral;
+}
+
+.todo-add-card-inner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-top: 5px solid;
+  padding: 10px;
+}
+
+.inner-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-top-field {
+  width: inherit;
+}
+
+#input-field {
+  width: 100%;
+  padding: 15px 20px;
+  margin: 15px 0px;
+  border: 1px solid black;
+  outline: none;
+  color: black;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: 0.2s ease;
+}
+
+/* #input-field:hover {
+  width: 100%;
+} */
+
+#input-field::placeholder {
+  color: black;
+}
+
+.inner-top-btns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+input[type='date'] {
+  padding: 10px;
+  border: 1px solid;
+  background-color: transparent;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.flag-btn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid;
+  background-color: transparent;
+  width: 50%;
+  cursor: pointer;
+}
+
+/* .flag-btn i {
+} */
+
+.inner-bottom {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-btn {
+  padding: 10px 30px;
+  border: 1px solid black;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: black;
+  background-color: transparent;
+  transition: 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: rgba(255, 127, 80, 0.5);
+}
+
+.todo-disp-card {
+  width: 800px;
+}
+
+/* ================== TodoAddCard Bottom CSS =================================== */
+
+.todo-disp-container {
+  margin-top: 30px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 5px 5px 5px 2px gray;
+  position: relative;
+
+}
+
+.todo-disp-container-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span.my-task {
+  font-size: 1.5rem;
+  padding-right: 5px;
+  border-right: 5px solid;
+  animation: toggleBorder 0.5s infinite;
+}
+
+.extra {
+  display: flex;
+  gap: 40px;
+}
+
+#sorting-option {
+  background-color: transparent;
+  padding: 5px 10px;
+}
+
+
+button.clear-local-storage {
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid;
+  font-size: 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: .4s ease;
+}
+
+button.clear-local-storage:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+
+
+
+@keyframes toggleBorder {
+  0% {
+    border: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+
+ul li {
+  list-style-type: none;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-btn {
+  padding: 10px 25px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.task-btn.move-task-up-btn:hover, .task-btn.move-task-down-btn:hover {
+  background-color: rgba(95, 158, 160, 0.5);
+}
+
+.task-btn.delete-btn:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.buttons-in-task {
+  display: flex;
+  gap: 10px;
+}
+
+select:not(.exclude) {
+  font-weight: bold;
+}
+
+select option {
+  background-color: beige;
+  padding: 5px 10px;
+}
+
+select option:not(:first-child) {
+  background-color: beige;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+/* make this shit responsive */
+
+@media screen and (max-width: 1400px) {
+  .todo-container {
+    flex-direction: row;
+    gap: 40px;
+    padding: 0px 20px;
+  }
+  .todo-add-card {
+    width: 60%;
+  }
+  .todo-disp-card {
+    width: 90%;
+  }
+}
+
+
+
+@media screen and (max-width: 960px) {
+  .todo-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 40px;
+  }
+  .todo-add-card {
+    width: 65%;
+  }
+  .todo-disp-card {
+    width: 70%;
+  }
+  .todo-add-card {
+    position: static;
+  }
+}
+
+
+
+@media screen and (max-width: 840px) {
+  .todo-container {
+    width: 100%;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .todo-add-card {
+    width: 70%;
+  }
+  .todo-disp-card {
+    width: 75%;
+  }
+  ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+
+
+@media screen and (max-width: 580px) {
+  .todo-container,
+  .todo-add-card,
+  .todo-disp-card {
+    width: 100%;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+  }
+  ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .todo-disp-container-top {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  button.clear-local-storage {
+    position: absolute;
+    border: 1px solid;
+    top: 20px;
+    right: 20px;
+  }
+  span.my-task {
+    font-size: 1.2rem;
+    padding-right: 5px;
+    border-right: 5px solid;
+    animation: toggleBorder 0.5s infinite;
+  }
+}
+
+
+
+@media screen and (max-width: 320px) {
+  .flag-btn {
+    padding: 5px 10px;
+  }
+  input[type='date'] {
+    padding: 5px;
+  }
+  .todo-add-card {
+    padding: 10px 5px;
+  }
+  .todo-disp-container {
+    margin-top: 10px;
+    padding: 20px;
+  }
+  span.my-task {
+    font-size: 1.2rem;
+  }
+  button.clear-local-storage {
+    border: none;
+    font-size: 1.5rem;
+  }
+  button.clear-local-storage:hover {
+    background-color: transparent;
+  }
+  .todo-disp-container-top {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  button.clear-local-storage {
+    position: absolute;
+    border: 1px solid;
+    top: 20px;
+    right: 20px;
+  }
+}
